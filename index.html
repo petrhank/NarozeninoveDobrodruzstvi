@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<!-- info -->
+		<meta charset="utf-8" />
+		<meta name="description" content="popis webu" />
+		<meta name="author" content="Petr Hank" />
+		<title>Narozeninové dobrodružství</title>
+		<!--  -->
+		<meta name="google" content="notranslate" />
+		<!-- Vypíná nabídku překladu v Google Chrome -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet" />
+		<!-- style -->
+		<link rel="stylesheet" href="css/style.css" type="text/css" />
+	</head>
+	<body>
+		<div class="container" id="game">
+			<div class="inventory">
+				<img draggable="false" class="pet-zizal" src="img/pet_zizal.png" alt="" title="Pět žížal" />
+				<img draggable="false" class="rybicka" src="img/rybicka.png" alt="" title="Rybička" />
+				<img draggable="false" class="havrani-pero" src="img/havrani_pero.png" alt="" title="Havraní pero" />
+				<img draggable="false" class="lektvar" src="img/lektvar.png" alt="" title="Léčivý lektvar" />
+			</div>
+			<div id="scene_tynka_start" class="scene active">
+				<div class="text-box">Ale ne, Kristýnce se udělalo špatně a odpoledne ji čeká narozeninová oslava. Zajdi k ježibabě a popros ji, aby ti uvařila léčivý lektvar.</div>
+				<a class="change-scene-btn" data-target="scene_rozcesti_1"></a>
+			</div>
+			<div id="scene_rozcesti_1" class="scene">
+				<div class="wrong-message">Nemůžeš se vrátit s prázdnou.</div>
+				<img draggable="false" src="img/zlutokneznik_netleskej.png" class="zlutokneznik-rozcesti" alt="" />
+				<a class="change-scene-btn" data-target="scene_jezibaba"></a>
+				<a class="change-scene-btn" data-target="scene_rozcesti_2"></a>
+				<a class="change-scene-btn" data-target="scene_tynka_end"></a>
+				<a class="change-scene-btn" data-target="scene_vez"></a>
+			</div>
+			<div id="scene_vez" class="scene">
+				<div class="healthbar hidden">
+					<div class="health"></div>
+				</div>
+				<div class="text-box">Žlutokněžník Netleskej spí ve své věži. Není radno ho rušit, raději buď potichu.</div>
+				<div class="zlutokneznik hidden">
+					<img draggable="false" src="img/zlutokneznik_netleskej.png" alt="" />
+				</div>
+
+				<a class="change-scene-btn" data-target="scene_rozcesti_1"></a>
+			</div>
+			<div id="scene_jezibaba" class="scene">
+				<a class="change-scene-btn" data-target="scene_rozcesti_1"></a>
+				<a class="change-scene-btn" data-target="scene_vodnik"></a>
+				<div class="text-box">Lektvar ti uvařím, ale musíš si na něj sehnat ingredience. Pět žížal, rybu a havraní pero.</div>
+			</div>
+			<div id="scene_vodnik" class="scene">
+				<a class="change-scene-btn" data-target="scene_jezibaba"></a>
+				<div class="text-box">Pokud mi pomůžeš vylovit deset žížal, pět ti jich dám. Pozor ale na medůzu. Popálí ti prsty a všechny žížaly upustíš.</div>
+				<div class="vodnik-minigame">
+					<div class="zizaly-counter-container">Počet chycených žížal: <span class="count">0</span></div>
+					<div class="meduza-container">
+						<div class="wrapper">
+							<img draggable="false" class="img" src="img/meduza.png" alt="" />
+						</div>
+					</div>
+					<div class="zizala-container">
+						<div class="wrapper">
+							<img draggable="false" class="img" src="img/zizala.png" alt="" />
+							<img draggable="false" class="catch" src="img/zizala_catch.png" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="scene_rozcesti_2" class="scene">
+				<img draggable="false" class="cert" src="img/cert.png" alt="" />
+				<img draggable="false" class="cert_hlaska" src="img/bublina.png" alt="" />
+				<div class="text-box">Na cestě křepčí zlý čert. Zkus přijít později.</div>
+				<a class="change-scene-btn" data-target="scene_rozcesti_1"></a>
+				<a class="change-scene-btn disabled" data-target="scene_glum"></a>
+				<a class="change-scene-btn disabled" data-target="scene_havran"></a>
+			</div>
+			<div id="scene_glum" class="scene">
+				<div class="wrong-message">Špatně, zkus to znovu</div>
+				<div class="text-box">
+					Jestli chceš moji rybišku, musíš nejprve uhodnout hádanku. "Není ji vidět, není ji cítit, není ji slyšet, nejde ji chytit. Je za hvězdami a pod horami a vyplňuje prázdné jámy. Byla tu
+					předtím a přijde pak a nakonec ti vytře zrak."
+					<input class="glum-input" type="text" placeholder="odpověď" />
+					<a class="glum-check-button">Ověřit</a>
+				</div>
+				<a class="change-scene-btn" data-target="scene_rozcesti_2"></a>
+			</div>
+			<div id="scene_havran" class="scene">
+				<div class="text-box">
+					Má ubohá mláďátka. Poztrácela jsem je po lese. Pomoz mi je najít! Pokud si nebudeš vědět rady, <span class="havran-minigame__otevrit-nahled">takhle</span> jsem je viděla naposledy.
+				</div>
+				<div class="havran-minigame">
+					<img draggable="false" src="img/havran_minigame-ramecek.png" class="havran-minigame__ramecek" alt="" />
+					<img draggable="false" id="havran-minigame__tile-3" class="havran-minigame__tile" src="img/havran_minigame_3.png" alt="" />
+					<img draggable="false" id="havran-minigame__tile-13" class="havran-minigame__tile" src="img/havran_minigame_13.png" alt="" />
+					<img draggable="false" id="havran-minigame__tile-1" class="havran-minigame__tile" src="img/havran_minigame_1.png" alt="" />
+					<img draggable="false" id="havran-minigame__tile-5" class="havran-minigame__tile" src="img/havran_minigame_5.png" alt="" />
+					<img draggable="false" id="havran-minigame__tile-8" class="havran-minigame__tile" src="img/havran_minigame_8.png" alt="" />
+					<img draggable="false" id="havran-minigame__tile-6" class="havran-minigame__tile" src="img/havran_minigame_6.png" alt="" />
+					<img draggable="false" id="havran-minigame__tile-12" class="havran-minigame__tile" src="img/havran_minigame_12.png" alt="" />
+					<img draggable="false" id="havran-minigame__tile-4" class="havran-minigame__tile" src="img/havran_minigame_4.png" alt="" />
+					<img draggable="false" id="havran-minigame__tile-9" class="havran-minigame__tile" src="img/havran_minigame_9.png" alt="" />
+					<img draggable="false" id="havran-minigame__tile-11" class="havran-minigame__tile" src="img/havran_minigame_11.png" alt="" />
+					<img draggable="false" id="havran-minigame__tile-10" class="havran-minigame__tile" src="img/havran_minigame_10.png" alt="" />
+					<img draggable="false" id="havran-minigame__tile-14" class="havran-minigame__tile" src="img/havran_minigame_14.png" alt="" />
+					<img draggable="false" id="havran-minigame__tile-7" class="havran-minigame__tile" src="img/havran_minigame_7.png" alt="" />
+					<img draggable="false" id="havran-minigame__tile-2" class="havran-minigame__tile" src="img/havran_minigame_2.png" alt="" />
+					<img draggable="false" id="havran-minigame__tile-15" class="havran-minigame__tile" src="img/havran_minigame_15.png" alt="" />
+				</div>
+				<img src="img/havran_minigame_nahled.jpg" class="havran-minigame__nahled" alt="" />
+				<a class="change-scene-btn" data-target="scene_rozcesti_2"></a>
+			</div>
+			<div id="scene_tynka_end" class="scene">
+				<div class="text-box">Hurá, podařilo se ti sehnat léčivý lektvar, který Týnce ulevil a ona si tak může užít narozeninovou oslavu.</div>
+			</div>
+		</div>
+		<!--JavaScript-->
+		<script src="js/VodnikMinigame.js"></script>
+		<script src="js/Inventory.js"></script>
+		<script src="js/GlumMiniGame.js"></script>
+		<script src="js/HavranMiniGameTile.js"></script>
+		<script src="js/HavranMiniGame.js"></script>
+		<script src="js/ZlutokneznikMiniGame.js"></script>
+		<script src="js/Sound.js"></script>
+		<script src="js/Game.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>

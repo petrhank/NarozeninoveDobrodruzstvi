@@ -1,0 +1,62 @@
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+	background-color: $background-color;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "Josefin Sans", sans-serif;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.cert {
+	position: absolute;
+	left: 210px;
+	top: 50px;
+	pointer-events: none;
+}
+
+.cert_hlaska {
+	position: absolute;
+	width: 320px;
+	left: 600px;
+}
+
+.wrong-message {
+	display: none;
+	opacity: 0;
+	position: absolute;
+	border: 5px solid black;
+	padding: 10px;
+	border-radius: 10px;
+	background-color: white;
+	font-size: 2rem;
+	color: rgb(218, 38, 38);
+	&.active {
+		display: block;
+		opacity: 1;
+	}
+}
+
+#scene_glum .wrong-message {
+	left: 325px;
+	top: 234px;
+}
+
+#scene_rozcesti_1 .wrong-message {
+	left: 285px;
+	top: 234px;
+}
+
+#darek {
+	display: block;
+	position: absolute;
+	width: 160px;
+	height: 150px;
+	left: 350px;
+	top: 366px;
+}

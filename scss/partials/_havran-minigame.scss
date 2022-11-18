@@ -1,0 +1,34 @@
+.havran-minigame {
+	background-color: #176511;
+	width: 450px;
+	height: 450px;
+	position: absolute;
+	left: 489px;
+	top: 59px;
+	display: grid;
+	position: relative;
+	overflow: hidden;
+	&__tile {
+		position: absolute;
+		width: 25%;
+		height: 25%;
+		transition: left 300ms ease, top 300ms ease;
+	}
+	&__ramecek {
+		position: absolute;
+		z-index: 1;
+		pointer-events: none;
+	}
+	&__otevrit-nahled {
+		font-weight: bold;
+	}
+	&__nahled {
+		display: none;
+		position: absolute;
+		top: 140px;
+		left: 120px;
+		&.active {
+			display: block;
+		}
+	}
+}

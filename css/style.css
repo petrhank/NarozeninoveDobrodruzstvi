@@ -1,0 +1,535 @@
+@charset "UTF-8";
+/*-----------------------------------------CORE.CSS-----------------------------------------*/
+/*CORE.css v1.0*/
+/*Vytvořil Petr Hank*/
+/**/
+/**/
+/*Nastavení box-sizing: border-box, takže šířka elementu, = content + padding + border a nastavení 
+základní výšky řádku pro všechny prohlížeče*/
+html {
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+/*Nastaví všem elementům dědičnost vlastnosti box-sizing z elementu html*/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*Odstranění marginu elementu body*/
+body {
+  margin: 0;
+}
+
+/*Starší prohlížeče špatně zobrazují HTML5 dokumenty, proto resetujeme vlastnost display*/
+article, aside, footer, header, nav, section, main {
+  display: block;
+}
+
+/*Odstranění odrážek u seznamů v elementech nav*/
+nav ol,
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+/*Sloučení ohraničení buňek v tabulkách*/
+table {
+  border-collapse: collapse;
+}
+
+/*Sjednocení vzhledu ohraničení fieldset pro všechny prohlížeče*/
+fieldset {
+  border: 1px solid #a0a0a0;
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/*Oprava velikosti h1 uvnitř elementů, jako article a section*/
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/*Oprava dekorace textu zkratky u některých prohlížečů*/
+abbr[title] {
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+/*------------------KONEC------------------CORE.CSS------------------KONEC------------------*/
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: #2a3241;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Josefin Sans", sans-serif;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.cert {
+  position: absolute;
+  left: 210px;
+  top: 50px;
+  pointer-events: none;
+}
+
+.cert_hlaska {
+  position: absolute;
+  width: 320px;
+  left: 600px;
+}
+
+.wrong-message {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  border: 5px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  font-size: 2rem;
+  color: #da2626;
+}
+
+.wrong-message.active {
+  display: block;
+  opacity: 1;
+}
+
+#scene_glum .wrong-message {
+  left: 325px;
+  top: 234px;
+}
+
+#scene_rozcesti_1 .wrong-message {
+  left: 285px;
+  top: 234px;
+}
+
+#darek {
+  display: block;
+  position: absolute;
+  width: 160px;
+  height: 150px;
+  left: 350px;
+  top: 366px;
+}
+
+.container {
+  background-color: white;
+  width: 1000px;
+  height: 562px;
+  aspect-ratio: 16 / 9;
+  position: relative;
+}
+
+.scene {
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.scene.active {
+  visibility: visible;
+}
+
+.change-scene-btn {
+  position: absolute;
+}
+
+.change-scene-btn.disabled {
+  display: none;
+}
+
+.text-box {
+  position: absolute;
+  line-height: 1.2;
+  text-align: center;
+}
+
+#scene_tynka_start {
+  background-image: url("../img/scene_tynka_start.jpg");
+}
+
+#scene_tynka_start [data-target="scene_rozcesti_1"] {
+  left: 671px;
+  top: 34px;
+  height: 452px;
+  width: 228px;
+}
+
+#scene_tynka_start .text-box {
+  left: 71px;
+  top: 30px;
+  width: 450px;
+}
+
+#scene_rozcesti_1 {
+  background-image: url("../img/scene_rozcesti_1.jpg");
+}
+
+#scene_rozcesti_1 [data-target="scene_jezibaba"] {
+  left: 378px;
+  top: 0;
+  height: 204px;
+  width: 228px;
+}
+
+#scene_rozcesti_1 [data-target="scene_rozcesti_2"] {
+  left: 606px;
+  top: 164px;
+  height: 150px;
+  width: 394px;
+}
+
+#scene_rozcesti_1 [data-target="scene_tynka_end"] {
+  left: 305px;
+  top: 412px;
+  height: 150px;
+  width: 461px;
+}
+
+#scene_rozcesti_1 [data-target="scene_vez"] {
+  left: 0;
+  top: 182px;
+  height: 250px;
+  width: 341px;
+}
+
+#scene_jezibaba {
+  background-image: url("../img/scene_jezibaba.jpg");
+}
+
+#scene_jezibaba [data-target="scene_rozcesti_1"] {
+  left: 0;
+  top: 304px;
+  height: 258px;
+  width: 204px;
+}
+
+#scene_jezibaba [data-target="scene_vodnik"] {
+  left: 130px;
+  top: 0;
+  height: 188px;
+  width: 204px;
+}
+
+#scene_jezibaba .text-box {
+  left: 595px;
+  top: 26px;
+  width: 270px;
+}
+
+#scene_vodnik {
+  background-image: url("../img/scene_vodnik.jpg");
+}
+
+#scene_vodnik [data-target="scene_jezibaba"] {
+  left: 0;
+  top: 399px;
+  height: 163px;
+  width: 284px;
+}
+
+#scene_vodnik .text-box {
+  left: 440px;
+  top: 30px;
+  width: 480px;
+}
+
+#scene_rozcesti_2 {
+  background-image: url("../img/scene_rozcesti_2.jpg");
+}
+
+#scene_rozcesti_2 [data-target="scene_rozcesti_1"] {
+  left: 0;
+  top: 399px;
+  height: 163px;
+  width: 434px;
+}
+
+#scene_rozcesti_2 [data-target="scene_glum"] {
+  left: 210px;
+  top: 0;
+  height: 272px;
+  width: 338px;
+}
+
+#scene_rozcesti_2 [data-target="scene_havran"] {
+  left: 706px;
+  top: 180px;
+  height: 233px;
+  width: 294px;
+}
+
+#scene_rozcesti_2 .text-box {
+  left: 622px;
+  top: 47px;
+  width: 270px;
+}
+
+#scene_glum {
+  background-image: url("../img/scene_glum.jpg");
+}
+
+#scene_glum [data-target="scene_rozcesti_2"] {
+  left: 0;
+  top: 399px;
+  height: 163px;
+  width: 304px;
+}
+
+#scene_glum .text-box {
+  left: 510px;
+  top: 50px;
+  width: 370px;
+}
+
+#scene_havran {
+  background-image: url("../img/scene_havran.jpg");
+}
+
+#scene_havran [data-target="scene_rozcesti_2"] {
+  left: 0;
+  top: 359px;
+  height: 203px;
+  width: 241px;
+}
+
+#scene_havran .text-box {
+  left: 111px;
+  top: 50px;
+  width: 350px;
+}
+
+#scene_tynka_end {
+  background-image: url("../img/scene_tynka_end.jpg");
+}
+
+#scene_tynka_end .text-box {
+  left: 71px;
+  top: 30px;
+  width: 450px;
+}
+
+#scene_vez {
+  background-image: url("../img/scene_vez.jpg");
+}
+
+#scene_vez [data-target="scene_rozcesti_1"] {
+  right: 0;
+  bottom: 0;
+  height: 123px;
+  width: 311px;
+}
+
+#scene_vez .text-box {
+  left: 591px;
+  top: 39px;
+  width: 320px;
+}
+
+.vodnik-minigame {
+  position: absolute;
+  left: 460px;
+  top: 100px;
+  width: 430px;
+  height: 420px;
+}
+
+.zizala-container,
+.meduza-container {
+  position: absolute;
+  overflow: hidden;
+}
+
+.zizala-container .wrapper,
+.meduza-container .wrapper {
+  transform: translateY(100%);
+  transition: transform 200ms ease-out;
+}
+
+.zizala-container .wrapper.active,
+.meduza-container .wrapper.active {
+  transform: translateY(0);
+}
+
+.zizala-container .img,
+.meduza-container .img {
+  display: block;
+}
+
+.zizala-container .catch,
+.meduza-container .catch {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.zizaly-counter-container {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+}
+
+.inventory {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 300px;
+  width: 50px;
+  background-color: #dfac4f;
+  border: 5px solid #774d00;
+  border-radius: 2px 2px 0 2px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pet-zizal,
+.rybicka,
+.havrani-pero,
+.lektvar {
+  display: none;
+}
+
+.glum-input {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.glum-check-button {
+  cursor: pointer;
+}
+
+.havran-minigame {
+  background-color: #176511;
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  left: 489px;
+  top: 59px;
+  display: grid;
+  position: relative;
+  overflow: hidden;
+}
+
+.havran-minigame__tile {
+  position: absolute;
+  width: 25%;
+  height: 25%;
+  transition: left 300ms ease, top 300ms ease;
+}
+
+.havran-minigame__ramecek {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.havran-minigame__otevrit-nahled {
+  font-weight: bold;
+}
+
+.havran-minigame__nahled {
+  display: none;
+  position: absolute;
+  top: 140px;
+  left: 120px;
+}
+
+.havran-minigame__nahled.active {
+  display: block;
+}
+
+@keyframes flyThrough {
+  0% {
+    transform: 0;
+  }
+  100% {
+    transform-origin: top left;
+    transform: translateX(-100%) scale(0.8);
+  }
+}
+
+.zlutokneznik-rozcesti {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  transform: translateX(1000px);
+  pointer-events: none;
+}
+
+.zlutokneznik-rozcesti.fly {
+  animation: flyThrough 3000ms ease-in;
+}
+
+@keyframes flyInCircles {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(0, 300px);
+  }
+  50% {
+    transform: translate(400px, 0);
+  }
+  75% {
+    transform: translate(400px, 300px);
+  }
+}
+
+@keyframes flyAway {
+  100% {
+    transform: translate(500px, -100%) rotate(180deg);
+  }
+}
+
+.zlutokneznik {
+  animation: flyInCircles 5000ms infinite;
+  width: 250px;
+}
+
+.zlutokneznik.flyaway {
+  animation: flyAway 2000ms ease-in both;
+}
+
+.zlutokneznik img {
+  pointer-events: none;
+  width: 250px;
+}
+
+.healthbar {
+  width: 400px;
+  height: 50px;
+  position: absolute;
+  border: 10px solid black;
+  border-radius: 10px;
+}
+
+.healthbar .health {
+  background-color: red;
+  height: 100%;
+}
+
+.zlutokneznik.hidden,
+.healthbar.hidden {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */

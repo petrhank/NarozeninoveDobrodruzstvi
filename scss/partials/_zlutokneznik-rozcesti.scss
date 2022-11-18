@@ -1,0 +1,20 @@
+@keyframes flyThrough {
+	0% {
+		transform: 0;
+	}
+	100% {
+		transform-origin: top left;
+		transform: translateX(-100%) scale(0.8);
+	}
+}
+
+.zlutokneznik-rozcesti {
+	position: absolute;
+	left: 0;
+	top: 50px;
+	transform: translateX(1000px);
+	pointer-events: none;
+	&.fly {
+		animation: flyThrough 3000ms ease-in;
+	}
+}

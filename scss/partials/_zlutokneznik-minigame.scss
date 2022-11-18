@@ -1,0 +1,51 @@
+@keyframes flyInCircles {
+	0% {
+		transform: translate(0);
+	}
+	25% {
+		transform: translate(0, 300px);
+	}
+	50% {
+		transform: translate(400px, 0);
+	}
+	75% {
+		transform: translate(400px, 300px);
+	}
+}
+
+@keyframes flyAway {
+	100% {
+		transform: translate(500px, -100%) rotate(180deg);
+	}
+}
+
+.zlutokneznik {
+	animation: flyInCircles 5000ms infinite;
+	width: 250px;
+	&.flyaway {
+		animation: flyAway 2000ms ease-in both;
+	}
+	& img {
+		pointer-events: none;
+		width: 250px;
+	}
+}
+
+.healthbar {
+	width: 400px;
+	height: 50px;
+	position: absolute;
+	border: 10px solid black;
+	border-radius: 10px;
+	& .health {
+		background-color: red;
+		height: 100%;
+	}
+}
+
+.zlutokneznik,
+.healthbar {
+	&.hidden {
+		display: none;
+	}
+}

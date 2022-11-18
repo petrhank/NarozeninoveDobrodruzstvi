@@ -1,0 +1,185 @@
+.scene {
+	visibility: hidden;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	&.active {
+		visibility: visible;
+	}
+}
+
+.change-scene-btn {
+	position: absolute;
+	&.disabled {
+		display: none;
+	}
+	// background: $click-zone-test-color;
+}
+
+.text-box {
+	position: absolute;
+	line-height: 1.2;
+	text-align: center;
+}
+
+#scene_tynka_start {
+	background-image: url("../img/scene_tynka_start.jpg");
+	& [data-target="scene_rozcesti_1"] {
+		left: 671px;
+		top: 34px;
+		height: 452px;
+		width: 228px;
+	}
+	& .text-box {
+		left: 71px;
+		top: 30px;
+		width: 450px;
+	}
+}
+#scene_rozcesti_1 {
+	background-image: url("../img/scene_rozcesti_1.jpg");
+	& [data-target="scene_jezibaba"] {
+		left: 378px;
+		top: 0;
+		height: 204px;
+		width: 228px;
+	}
+	& [data-target="scene_rozcesti_2"] {
+		left: 606px;
+		top: 164px;
+		height: 150px;
+		width: 394px;
+	}
+	& [data-target="scene_tynka_end"] {
+		left: 305px;
+		top: 412px;
+		height: 150px;
+		width: 461px;
+	}
+	& [data-target="scene_vez"] {
+		left: 0;
+		top: 182px;
+		height: 250px;
+		width: 341px;
+	}
+}
+
+#scene_jezibaba {
+	background-image: url("../img/scene_jezibaba.jpg");
+	& [data-target="scene_rozcesti_1"] {
+		left: 0;
+		top: 304px;
+		height: 258px;
+		width: 204px;
+	}
+	& [data-target="scene_vodnik"] {
+		left: 130px;
+		top: 0;
+		height: 188px;
+		width: 204px;
+	}
+	& .text-box {
+		left: 595px;
+		top: 26px;
+		width: 270px;
+	}
+}
+
+#scene_vodnik {
+	background-image: url("../img/scene_vodnik.jpg");
+	& [data-target="scene_jezibaba"] {
+		left: 0;
+		top: 399px;
+		height: 163px;
+		width: 284px;
+	}
+	& .text-box {
+		left: 440px;
+		top: 30px;
+		width: 480px;
+	}
+}
+
+#scene_rozcesti_2 {
+	background-image: url("../img/scene_rozcesti_2.jpg");
+	& [data-target="scene_rozcesti_1"] {
+		left: 0;
+		top: 399px;
+		height: 163px;
+		width: 434px;
+	}
+	& [data-target="scene_glum"] {
+		left: 210px;
+		top: 0;
+		height: 272px;
+		width: 338px;
+	}
+	& [data-target="scene_havran"] {
+		left: 706px;
+		top: 180px;
+		height: 233px;
+		width: 294px;
+	}
+	& .text-box {
+		left: 622px;
+		top: 47px;
+		width: 270px;
+	}
+}
+
+#scene_glum {
+	background-image: url("../img/scene_glum.jpg");
+	& [data-target="scene_rozcesti_2"] {
+		left: 0;
+		top: 399px;
+		height: 163px;
+		width: 304px;
+	}
+	& .text-box {
+		left: 510px;
+		top: 50px;
+		width: 370px;
+	}
+}
+
+#scene_havran {
+	background-image: url("../img/scene_havran.jpg");
+	& [data-target="scene_rozcesti_2"] {
+		left: 0;
+		top: 359px;
+		height: 203px;
+		width: 241px;
+	}
+	& .text-box {
+		left: 111px;
+		top: 50px;
+		width: 350px;
+	}
+}
+
+#scene_tynka_end {
+	background-image: url("../img/scene_tynka_end.jpg");
+	& .text-box {
+		left: 71px;
+		top: 30px;
+		width: 450px;
+	}
+}
+
+#scene_vez {
+	background-image: url("../img/scene_vez.jpg");
+	& [data-target="scene_rozcesti_1"] {
+		right: 0;
+		bottom: 0;
+		height: 123px;
+		width: 311px;
+	}
+	& .text-box {
+		left: 591px;
+		top: 39px;
+		width: 320px;
+	}
+}

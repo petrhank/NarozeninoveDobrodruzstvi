@@ -1,0 +1,21 @@
+.inventory {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	height: 300px;
+	width: 50px;
+	background-color: rgb(223, 172, 79);
+	border: 5px solid rgb(119, 77, 0);
+	border-radius: 2px 2px 0 2px;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.pet-zizal,
+.rybicka,
+.havrani-pero,
+.lektvar {
+	display: none;
+}
